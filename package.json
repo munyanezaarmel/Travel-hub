@@ -1,13 +1,13 @@
 {
   "name": "travel-hub",
+  "homepage": "https://munyanezaarmel.github.io/Travel-hub",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://munyanezaarmel.github.io/Travel-hub",
   "type": "module",
   "scripts": {
     "dev": "vite",
-     "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
