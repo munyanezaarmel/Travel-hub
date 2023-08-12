@@ -9,6 +9,19 @@ TravelHub is an innovative online travel platform that aims to revolutionize the
 
 
 ### Features
+- users need to be able to search for stays, flights,flights+hotels, car rentals, attractions, and airport taxis, by providing a destination, time window, and number of people.
+
+- users need to be able to see offers/promotions
+
+- users need to be able to see trending destination
+
+- users need to be able to see popular destinations within a number of properties
+
+- users need to be able to see social media posts to get inspiration for their next trip
+
+- users need to be able to navigate to a list of properties for each country/city/destination
+
+-
 - As a user, I should be able to create and log in with my Email and password
 - As a user, I should be able to log in and signup with my social media accounts
 - As a user, I should be able to see exits places on the landing page
