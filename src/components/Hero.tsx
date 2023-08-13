@@ -3,7 +3,7 @@ import background from '../assets/back2.jpg'
 export default function Hero() {
     return (
       <div>
-        <div
+        <div className=' '
           style={{
             backgroundImage: `url(${background})`,
             backgroundRepeat: "no-repeat",

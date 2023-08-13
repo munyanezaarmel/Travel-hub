@@ -1,14 +1,14 @@
-import React from 'react'
-import flag from "../assets/flag.png"
+import React from "react";
+import flag from "../assets/flag.png";
 export default function Header() {
   return (
     <div className="bg-[#003B95] text-white font-Roboto p-5">
       <div className="flex justify-between items-center">
         <h1 className="ml-20 font-bold text-[24px]">Travelhub.com</h1>
-        <div className="flex justify-end gap-8 items-center">
+        <div className=" hidden lg:flex lg:justify-end lg:gap-8 lg:items-center">
           <h2 className="font-bold">USD</h2>
           <img src={flag} width={30} height={30} alt="national flag" />
-          <p className='font-bold'>List your property</p>
+          <p className="font-bold">List your property</p>
           <button className="bg-white w-[154px] h-[45px] text-[#006CE4] rounded font-medium ">
             Register
           </button>

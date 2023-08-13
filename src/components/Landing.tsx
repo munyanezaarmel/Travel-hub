@@ -4,6 +4,8 @@ import Hero from "./Hero";
 import Form from "./Form";
 import Recent from "./Recent";
 import TrendingDestination from "./trendingDestination";
+import Explore from "./explore";
+import Type from "./type";
 export default function Landing() {
   return (
     <div>
@@ -11,7 +13,9 @@ export default function Landing() {
       <Hero />
       <Form />
       <Recent />
-      <TrendingDestination/>
+      <Explore />
+      <TrendingDestination />
+      <Type />
     </div>
   );
 }
