@@ -1,5 +1,5 @@
 import React from "react";
-import explore from '../assets/explore.png'
+import explore from '../../assets/explore.png'
 export default function Explore() {
   return (
     <div>

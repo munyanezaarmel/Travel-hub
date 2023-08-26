@@ -1,5 +1,5 @@
 import React from 'react'
-import arena from '../assets/arena.png'
+import arena from '../../assets/arena.png'
 export default function Recent() {
   return (
     <div className="mb-20">

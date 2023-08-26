@@ -1,5 +1,5 @@
 import React from 'react'
-import desk from '../assets/desk.png'
+import desk from '../../assets/desk.png'
 
 export default function TrendingDestination() {
   return (
