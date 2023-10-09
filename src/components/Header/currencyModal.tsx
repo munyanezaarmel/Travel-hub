@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
+import axios from "axios";
+interface CountryData {
+  name: {
+    common: string;
+  };
+  currencies: {
+    code: string;
+    symbol: string;
+  }[];
+}
 export default function CurrencyModal({
   closeModal,
 }: {
   closeModal: () => void;
 }) {
-  const [countryOptions, setCountryOptions] = useState([]);
+  const [countryOptions, setCountryOptions] = useState<CountryData[]>([]);
 
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
-      .then((response) => response.json())
-      .then((data) => {
-        const options = data.map((country) => ({
-          value: country.currencies[0], // Assuming one currency per country
-          label: country.name.common,
-          flag: country.flags.svg,
-        }));
-        setCountryOptions(options);
-      })
-      .catch((error) => console.error(error));
+   axios.get("https://restcountries.com/v3.1/all").then((response:any)=>{
+    setCountryOptions(response.data)
+   }).catch((err:any)=>{
+    console.log(err)
+   })
   }, []);
-
+  if(!countryOptions) return null
   return (
     <div
       className="fixed inset-0 z-[130] flex h-full w-full items-center justify-center bg-black/30 backdrop-blur-sm"
@@ -61,6 +64,18 @@ export default function CurrencyModal({
             <p className="text-[#191919] text-[24px] font-bold">
               Select your currency
             </p>
+            {countryOptions.map((country, index) => (
+              <div key={index} className=" text-[#191919]">
+                <div className=" grid grid-cols-4">
+                  {country.currencies && Object.keys(country.currencies).map((currencyCode) => (
+                    <div key={currencyCode} className="">
+                      {currencyCode} - {country.currencies[currencyCode].symbol}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+    
           </div>
         )}
       </motion.div>
