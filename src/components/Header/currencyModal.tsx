@@ -18,13 +18,16 @@ export default function CurrencyModal({
   const [countryOptions, setCountryOptions] = useState<CountryData[]>([]);
 
   useEffect(() => {
-   axios.get("https://restcountries.com/v3.1/all").then((response:any)=>{
-    setCountryOptions(response.data)
-   }).catch((err:any)=>{
-    console.log(err)
-   })
+    axios
+      .get("https://restcountries.com/v3.1/all")
+      .then((response: any) => {
+        setCountryOptions(response.data);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      });
   }, []);
-  if(!countryOptions) return null
+  if (!countryOptions) return null;
   return (
     <div
       className="fixed inset-0 z-[130] flex h-full w-full items-center justify-center bg-black/30 backdrop-blur-sm"
@@ -60,22 +63,33 @@ export default function CurrencyModal({
           </svg>
         </div>
         {countryOptions.length > 0 && (
-          <div>
+          <div className="">
             <p className="text-[#191919] text-[24px] font-bold">
-              Select your currency
+              Select your Language
             </p>
-            {countryOptions.map((country, index) => (
-              <div key={index} className=" text-[#191919]">
-                <div className=" grid grid-cols-4">
-                  {country.currencies && Object.keys(country.currencies).map((currencyCode) => (
-                    <div key={currencyCode} className="">
-                      {currencyCode} - {country.currencies[currencyCode].symbol}
-                    </div>
-                  ))}
+            <div className="grid grid-cols-4 gap-4 max-h-[800px] overflow-y-auto no-scrollbar">
+              {countryOptions.map((country, index) => (
+                <div
+                  key={index}
+                  className=" text-[#191919]"
+                >
+                  <div className="">
+                    {country.flag &&
+                      Object.keys(country.currencies).map(
+                        (currencyCode: any) => (
+                          <div
+                            key={currencyCode}
+                            className=" grid justify-between  hover:p-2 hover:bg-gray-100 hover:border-lg"
+                          >
+                            {country.currencies[currencyCode].name}
+                            <div>{currencyCode}</div>
+                          </div>
+                        )
+                      )}
+                  </div>
                 </div>
-              </div>
-            ))}
-    
+              ))}
+            </div>
           </div>
         )}
       </motion.div>
