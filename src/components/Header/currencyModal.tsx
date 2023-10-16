@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import axios from "axios";
-interface CountryData {
+import axios from "axios";interface CountryData {
   name: {
     common: string;
   };
   currencies: {
-    code: string;
-    symbol: string;
-  }[];
+    [currencyCode: string]: {
+      name: string;
+      symbol: string;
+    };
+  };
 }
+
 export default function CurrencyModal({
   closeModal,
 }: {
@@ -74,7 +76,7 @@ export default function CurrencyModal({
                   className=" text-[#191919]"
                 >
                   <div className="">
-                    {country.flag &&
+                    {country.currencies &&
                       Object.keys(country.currencies).map(
                         (currencyCode: any) => (
                           <div
