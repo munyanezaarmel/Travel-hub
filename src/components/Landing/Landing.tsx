@@ -1,21 +1,22 @@
-import React from "react";
+import { useContext } from "react";
 import Header from "../Header/Header";
 import Hero from "../Hero";
 import Form from "../Form";
-import Recent from "../Recent/Recent";
-import TrendingDestination from "../Trending Destination/trendingDestination";
-import Explore from "../Explore/explore";
-import Type from "../Type/type";
+import { BookingStoreContext } from "../../contexts/BookingStore";
+
 export default function Landing() {
+  //const bookingContext = useContext(BookingStoreContext);
   return (
     <div>
       <Header />
       <Hero />
       <Form />
-      <Recent />
-      <Explore />
-      <TrendingDestination />
-      <Type />
+      <div>
+        Your upcoming trips
+        <ol>
+          <li>Barcelona (2 adults) - 17th November, 2023</li>
+        </ol>
+      </div>
     </div>
   );
 }

@@ -19,11 +19,11 @@ export default function Header() {
           {showLanguageModel &&< LanguageModal closeModal={()=>setLanguageModel(false)} />}
           <img src={flag} width={30} height={30} onClick={()=>setLanguageModel(true)} alt="national flag" />
           <p className="font-bold">List your property</p>
-          <button className="bg-white w-[154px] h-[45px] text-[#006CE4] rounded font-medium ">
-            Register
-          </button>
-          <button className="bg-white w-[154px] h-[45px] text-[#006CE4] rounded font-medium">
-            Sign in
+          <div>
+            Hello User 1
+          </div>
+          <button>
+            My bookings
           </button>
         </div>
       </div>
