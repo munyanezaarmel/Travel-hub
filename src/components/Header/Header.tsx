@@ -14,11 +14,11 @@ export default function Header() {
           <h1 className="ml-20 font-bold text-[24px]">Travelhub.com</h1>
         </a>
         <div className=" hidden lg:flex lg:justify-end lg:gap-8 lg:items-center">
-          <button className="font-bold" onClick={()=>setShowModal(true)}>USD</button>
+          {/* <button className="font-bold" onClick={()=>setShowModal(true)}>USD</button>
           {showModal &&< CurrencyModal closeModal={()=>setShowModal(false)} />}
           {showLanguageModel &&< LanguageModal closeModal={()=>setLanguageModel(false)} />}
           <img src={flag} width={30} height={30} onClick={()=>setLanguageModel(true)} alt="national flag" />
-          <p className="font-bold">List your property</p>
+          <p className="font-bold">List your property</p> */}
           <div>
             Hello User 1
           </div>
